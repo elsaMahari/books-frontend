@@ -1,2 +1,14 @@
-<h1>List of Books</h1>
-{{booksAsJson}}
+    <h1>List of Books</h1>
+    <div>
+      {{booksAsJson}}
+    </div>
+    <br/>
+    <form ng-submit="submit()" ng-controller="MainCtrl">
+      Enter text and hit enter:
+      <input type="text" ng-model="text" name="text" />
+      <input type="submit" id="submit" value="Submit" />
+      <pre>list={{list}}</pre>
+    </form>
+
+
+
