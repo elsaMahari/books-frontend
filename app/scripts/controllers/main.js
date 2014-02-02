@@ -6,11 +6,29 @@ angular.module('booksFrontendApp')
 		$scope.booksAsJson = data;
 	});
 	$scope.list = [];
-	$scope.text = 'hello';
+	$scope.author = 'Author';
+	$scope.title = 'Title';
+	$scope.year = '2014';
+	$scope.language = 'english';
+	$scope.bookpicture = 'www.nicepics.com';
+	$scope.readingyear = '2014'
+
 	$scope.submit = function() {
-		if (this.text) {
-			this.list.push(this.text);
-			this.text = '';
+		if(this.entryBook.$valid){
+			$http({
+				method: 'POST', 
+				url: '/books',
+				data: {
+					"author":this.author,
+					"title": this.title,
+					"year": this.year,
+					"language": this.language,
+					"bookpicture": this.bookpicture,
+					"readingyear": this.readingyear
+				}
+			}).success(function(data, status, headers, config){
+				$scope.booksAsJson = data;
+			});
 		}
 	};
 });

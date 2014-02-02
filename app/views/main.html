@@ -3,11 +3,14 @@
       {{booksAsJson}}
     </div>
     <br/>
-    <form ng-submit="submit()" ng-controller="MainCtrl">
-      Enter data and hit enter:
-      Autor: <input type="text" ng-model="text" name="text" />
-      Book Title: <input type="text" ng-model="text" name="text" />
-      Publisher: <input type="text" ng-model="text" name="text" />
+    <form name='entryBook' ng-submit="submit()" ng-controller="MainCtrl">
+      Enter data and hit enter:</br></br>
+      Author: </br><input type="text" ng-model="author" name="author" required/></br></br>
+      Book Title: </br><input type="text" ng-model="title" name="title" required/></br></br>
+      Year: </br><input type="text" ng-model="year"name="year" required/></br></br>
+      Language: </br><input type="text" ng-model="language" name="language" required/></br></br>
+      Picture url: </br><input type="text" ng-model="bookpicture" name="bookpicture"/></br></br>
+      Year of reading: </br><input type="text" ng-model="readingyear" name="readingyear" /></br></br>
       <input type="submit" id="submit" value="Submit" />
       <pre>list={{list}}</pre>
     </form>
